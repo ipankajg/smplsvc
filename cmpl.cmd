@@ -15,6 +15,7 @@ set _libPath="%_out%","%_azSdkAsms%"
 set _cspkg=%_out%\WcfSmplSvc.cspkg
 
 del %_cspkg%
+mkdir %_out%
 
 REM Build WCF service contract DLL
 csc /t:library /out:"%_out%\%_contractDll%" WcfSmplSvcCntrct.cs 
