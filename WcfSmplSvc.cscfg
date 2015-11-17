@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ServiceConfiguration serviceName="WcfSmplSvc" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2015-04.2.6">
+  <Role name="WcfSmplSvc">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true"/>
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>
