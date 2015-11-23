@@ -1,7 +1,7 @@
 using System;
 using System.ServiceModel;
 
-namespace WcfSmplSvc
+namespace LogicPundit.Samples.WcfSvc
 {
 
 [ServiceContract]

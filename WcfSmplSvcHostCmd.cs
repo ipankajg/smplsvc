@@ -1,23 +1,18 @@
 using System;
 using System.ServiceModel;
-using WcfSmplSvc;
+using LogicPundit.Samples.WcfSvc;
 
 class Program
 {
 
 static void Main(string[] args)
 {
-    BasicHttpBinding binding = new BasicHttpBinding();
-            
-    Uri serviceUri = new Uri("http://localhost:"+ SmplSvcConst.TcpPort);
-    ServiceHost host = new ServiceHost(typeof(SmplSvc), serviceUri);
-    host.AddServiceEndpoint(typeof(ISmplSvc), binding, SmplSvcConst.UriSuffix);
-    host.Open();
+    ServiceHost host = SmplSvcUtils.HostCreate();
 
     Console.WriteLine("WCF service is running, press any key to close it.");
     Console.ReadLine();
 
-    host.Close();            
+    SmplSvcUtils.HostDelete(host);
 }
 
 }

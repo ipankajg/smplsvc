@@ -1,6 +1,6 @@
 using System;
 using System.ServiceModel;
-using WcfSmplSvc;
+using LogicPundit.Samples.WcfSvc;
 
 class Program
 {
@@ -8,7 +8,7 @@ static int Main(string[] args)
 {
     if (args.Length != 1)
     {
-        Console.WriteLine("Usage: WcfSmplSvcClnt.exe [Server Name | Server IP Address]");
+        Console.WriteLine("Usage: LogicPundit.Samples.WcfSvc.Client.exe [Server Name | Server IP Address]");
         return -1;
     }
 

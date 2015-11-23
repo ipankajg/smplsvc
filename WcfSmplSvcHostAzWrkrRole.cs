@@ -2,10 +2,12 @@ using System;
 using System.Threading;
 using System.ServiceModel;
 using Microsoft.WindowsAzure.ServiceRuntime;
-using WcfSmplSvc;
+using LogicPundit.Samples.WcfSvc;
 
 public class WorkerRole : RoleEntryPoint
 {
+    ServiceHost host = null;
+
     public override void Run()
     {
         while (true)
@@ -16,14 +18,14 @@ public class WorkerRole : RoleEntryPoint
 
     public override bool OnStart()
     {
-        BasicHttpBinding binding = new BasicHttpBinding();
-            
-        Uri serviceUri = new Uri("http://localhost:"+ SmplSvcConst.TcpPort);
-        ServiceHost host = new ServiceHost(typeof(SmplSvc), serviceUri);
-        host.AddServiceEndpoint(typeof(ISmplSvc), binding, "SmplSvc");
-        host.Open();
-
+        host = SmplSvcUtils.HostCreate();
         return base.OnStart();
+    }
+
+    public override void OnStop()
+    {
+        SmplSvcUtils.HostDelete(host);
+        base.OnStop();
     }
 }
 
