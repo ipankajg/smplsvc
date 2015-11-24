@@ -18,7 +18,7 @@ public class WorkerRole : RoleEntryPoint
 
     public override bool OnStart()
     {
-        host = SmplSvcUtils.HostCreate();
+        host = SmplSvcUtils.SecureHostCreate();
         return base.OnStart();
     }
 

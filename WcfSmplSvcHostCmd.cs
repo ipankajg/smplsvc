@@ -7,7 +7,7 @@ class Program
 
 static void Main(string[] args)
 {
-    ServiceHost host = SmplSvcUtils.HostCreate();
+    ServiceHost host = SmplSvcUtils.SecureHostCreate();
 
     Console.WriteLine("WCF service is running, press any key to close it.");
     Console.ReadLine();
