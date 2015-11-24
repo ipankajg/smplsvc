@@ -9,10 +9,10 @@ This is a sample WCF based azure cloud service created without using visual stud
 5. Service client - A console based program that acts as a client to this service. It is implemented in WcfSmplSvcClnt.cs
 6. Cloud service files - A csdef and cscfg that describes the cloud service (required for hosting this service in Azure).
 
-You can either host this service on your local machine by running WcfSmplSvcHostCmd.exe on the local machine in an elevated command prompt, or you can host it in azure cloud service by uploading WcfSmplSvc.cspkg and WcfSmplSvc.cscfg to the cloud service.
+You can either host this service on your local machine by running <i>LogicPundit.Samples.WcfSvc.Host.Console.exe</i> on the local machine in an elevated command prompt, or you can host it in azure cloud service by uploading WcfSmplSvc.cspkg and WcfSmplSvc.cscfg to the cloud service.
 
 In this release, service only implements BasicHttpBinding but in future versions, I may add support for WsHttpBinding and support for cert based authentication etc.
 
 # Compilation
-Run cmpl.cmd from a visual studio x64 native tools command prompt. Please make sure that the cspack is in the same location as specified in cmpl.cmd. If not, change the cmpl.cmd with correct path for cspack and other azure binaries.
+Run cmpl.cmd from a visual studio x64 native tools command prompt. Please make sure that the cspack is in the same location as specified in cmpl.cmd. If not, change the cmpl.cmd with correct path for cspack.exe and other azure binaries.
 
